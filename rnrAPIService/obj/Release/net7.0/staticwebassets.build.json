@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0ufw2MSTuGpAhpu1rFnOln0u8Muf6NroIQib+nlKi0k=",
+  "Source": "rnrAPIService",
+  "BasePath": "_content/rnrAPIService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

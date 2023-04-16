@@ -17,11 +17,12 @@ namespace rnrAPIService.Controllers
         }
 
         [HttpGet]
+        [Route("getbreakdowns")]
         public async Task<ActionResult<List<Breakdown>>> GetAllBreakdowns()
         {
             using var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             IEnumerable<Breakdown> breakdowns = await SelectAllBreakdowns(connection);
-            return Ok(breakdowns);
+            return Ok(breakdowns.ToList());
         }
 
         private static async Task<IEnumerable<Breakdown>> SelectAllBreakdowns(SqlConnection connection)
@@ -38,6 +39,7 @@ namespace rnrAPIService.Controllers
         }
 
         [HttpPost]
+        [Route("create")]
         public async Task<ActionResult<List<Breakdown>>> CreateBreakdown(Breakdown breakdown)
         {
             using var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
@@ -46,6 +48,7 @@ namespace rnrAPIService.Controllers
         }
 
         [HttpPut]
+        [Route("update")]
         public async Task<ActionResult<List<Breakdown>>> UpdateBreakdown(Breakdown breakdown)
         {
             using var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
